@@ -5,17 +5,9 @@ const fileUpload = require("express-fileupload");
 const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 
-const allowedOrigins = ['https://platform-dev.mceasy.com', 'http://localhost:8080', 'http://localhost:8081']
-
 const app = express();
 app.use(cors({
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    },
+    origin: ['https://platform-dev.mceasy.com', 'http://localhost:8080', 'http://localhost:8081'],
     credentials: true,
 }));
 app.use(fileUpload());
