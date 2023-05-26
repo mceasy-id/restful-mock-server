@@ -6,7 +6,9 @@ const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://platform-dev.mceasy.com,http://localhost:8080'
+}));
 app.use(fileUpload());
 app.use(express.json());
 
