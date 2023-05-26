@@ -7,7 +7,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors({
-    origin: 'https://platform-dev.mceasy.com,http://localhost:8080'
+    origin: 'https://platform-dev.mceasy.com'
 }));
 app.use(fileUpload());
 app.use(express.json());
